@@ -1,6 +1,6 @@
 <?php
     include("database.php");
-    $webhook = 'https://maker.ifttt.com/use/'.IFTTT_WEBHOOKS_KEY;
+    $webhook = 'https://maker.ifttt.com/trigger/';
 
     $sql = mysql_query('SELECT * FROM DB_TABLE');
     $variablesArray = array();
@@ -13,8 +13,8 @@
         $outputName="action1";
 
         $ch = curl_init();
-        curl_setopt($ch, CURLOPT_URL, webhook.$outputName);
-        curl_setopt($ch, CURLOPT_HEADER, 0);
+        curl_setopt($ch, CURLOPT_URL, webhook.$outputName.'/with/key/'.IFTTT_WEBHOOKS_KEY);
+        curl_setopt($ch,CURLOPT_POST, true);
         curl_exec($ch);
         curl_close($ch);
     }
