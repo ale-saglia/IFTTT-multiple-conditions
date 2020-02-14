@@ -1,5 +1,5 @@
 <?php
-    include("database.php");
+    include("userdata.php");
 
     $variableName = $_GET["name"];
     $variableValue = $_GET["value"];

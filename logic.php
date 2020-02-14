@@ -1,5 +1,5 @@
 <?php
-    include("database.php");
+    include("userdata.php");
 
     $sql = mysql_query('SELECT * FROM DB_TABLE');
     $variablesArray = array();
