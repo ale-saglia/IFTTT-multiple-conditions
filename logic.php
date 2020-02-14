@@ -8,14 +8,16 @@
         $variablesArray[$row['name']] = $row['value'];
     }
 
-    //Example
-    if($variablesArray['variable1']=1 && $variablesArray['variable2']=1){
-        $outputName="action1";
-
+    function fireAction($trigger){
         $ch = curl_init();
-        curl_setopt($ch, CURLOPT_URL, webhook.$outputName.'/with/key/'.IFTTT_WEBHOOKS_KEY);
+        curl_setopt($ch, CURLOPT_URL, webhook.$trigger.'/with/key/'.IFTTT_WEBHOOKS_KEY);
         curl_setopt($ch,CURLOPT_POST, true);
         curl_exec($ch);
         curl_close($ch);
+    }
+
+    //Example
+    if($variablesArray['variable1']=1 && $variablesArray['variable2']=1){
+        fireAction('action1');
     }
 ?>
