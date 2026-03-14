@@ -1,2 +1,2 @@
 # IFTTT-multiple-conditions
-The porpouse of this project is to create a simple web-server that uses PHP to manage multiple condition to trigger webhook based event.
+This project aims to provide a simple PHP-based web server that evaluates multiple conditions and triggers events through webhooks.
